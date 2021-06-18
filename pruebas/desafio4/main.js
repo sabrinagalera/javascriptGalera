@@ -1,10 +1,31 @@
 // Declaración de variables. 
 
-let aurico = 500;
-let jabon = 300
-let rollOn= 800;
-let crema = 900;
-let total = 0;
+
+let total= 0;
+let carrito = [];
+//Declaración de clases
+
+class Producto {
+    constructor(id, nombreProducto, precio){
+        this.id = id;
+        this.nombreProducto=nombreProducto;
+        this.precio=precio;
+    }
+
+    agregarProducto(){
+        carrito.push(Producto);
+    }
+
+     
+}
+//Declaración de objetos
+
+const aurico = new Producto(1, "Áurico", 500);
+const jabon = new Producto(2, "Jabon", 300);
+const rollOn = new Producto(3, "RollOn", 800);
+const crema = new Producto(4, "Crema", 900);
+
+
 
 //Declaración de funciones
 
@@ -40,16 +61,20 @@ function calcularProductos(){
     let res = Number(prompt("1-Áurico:$500\n2-Jabón:$300\n3-RollOn:$800\n4-Crema:$900\nIngrese el n° de producto que desea agregar: "));
     switch (res){
         case 1:
-            total += aurico;
+            total += aurico.precio;
+            carrito.push(aurico);
             break;
         case 2:
-            total += jabon;
+            total += jabon.precio;
+            carrito.push(jabon);
             break;
         case 3:
-            total += rollOn;
+            total += rollOn.precio;
+            carrito.push(rollOn);
             break;
         case 4:
-            total += crema;
+            total += crema.precio;
+            carrito.push(crema);
             break;
     };
     return total;
@@ -83,5 +108,11 @@ do {
 // Se muestra el resultado en consola
 
 console.log("Cliente: " + nombre + "\n Total del pedido: $" + total)
+console.log("Productos en el carrito:");
+for(const item of carrito){
+    console.log(item);
+
+}
+
 
 
