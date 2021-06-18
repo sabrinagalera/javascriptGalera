@@ -62,7 +62,7 @@ function calcularProductos(){
     switch (res){
         case 1:
             total += aurico.precio;
-            aurico.agregarProducto();
+            aurico.agregarProducto(); //De esta forma me muestra en la consola sólo el nombre del producto
             break;
         case 2:
             total += jabon.precio;
@@ -70,7 +70,7 @@ function calcularProductos(){
             break;
         case 3:
             total += rollOn.precio;
-            carrito.push(rollOn);
+            carrito.push(rollOn); //De esta otra forma me muestra el objeto entero con todas sus propiedades
             break;
         case 4:
             total += crema.precio;
