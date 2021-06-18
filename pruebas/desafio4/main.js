@@ -13,7 +13,7 @@ class Producto {
     }
 
     agregarProducto(){
-        carrito.push(Producto);
+        carrito.push(this.nombreProducto);
     }
 
      
@@ -62,11 +62,11 @@ function calcularProductos(){
     switch (res){
         case 1:
             total += aurico.precio;
-            carrito.push(aurico);
+            aurico.agregarProducto();
             break;
         case 2:
             total += jabon.precio;
-            carrito.push(jabon);
+            jabon.agregarProducto();
             break;
         case 3:
             total += rollOn.precio;
